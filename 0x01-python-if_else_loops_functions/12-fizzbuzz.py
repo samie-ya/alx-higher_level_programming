@@ -4,14 +4,11 @@
 def fizzbuzz():
 
     for i in range(1, 101):
-        if (i % 3 == 0):
+        if ((i % 3 == 0) and not(i % 15 == 0)):
             print("Fizz ", end="")
-        elif (i % 5 == 0):
+        elif ((i % 5 == 0) and not(i % 15 == 0)):
             print("Buzz ", end="")
         elif (i % 15 == 0):
             print("FizzBuzz ", end="")
         else:
-            if (i < 100):
-                print("{:d} ".format(i), end="")
-            else:
-                print("{:d}".format(i), end="")
+            print("{:d} ".format(i), end="")
