@@ -11,4 +11,7 @@ def fizzbuzz():
         elif (i % 15 == 0):
             print("FizzBuzz ", end="")
         else:
-            print("{:d} ".format(i), end="")
+            if (i < 100):
+                print("{:d} ".format(i), end="")
+            else:
+                print("{:d}".format(i), end="")
