@@ -3,12 +3,14 @@
 
 def uppercase(str):
 
-    for i in range(0, len(str)):
+    for i in str:
 
-        str1 = ord(str[i])
+        str1 = ord(i)
 
         if ((str1 >= 97) and (str1 <= 122)):
             str1 = str1 - 32
-            print("{:c}".format(str1), end="")
+        else:
+            str1 = ord(i)
+        print("{:c}".format(str1), end="")
 
     print()
