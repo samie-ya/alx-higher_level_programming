@@ -4,7 +4,7 @@
 
 class Square:
     """This is class is to compute area of a square"""
-    def __init__(self, size = 0):
+    def __init__(self, size=0):
         """Class is initialized with a field named size.
 
         Args:
