@@ -14,12 +14,6 @@ class Square:
         """
         self.__size = size
         self.__position = position
-        if not(isinstance(size, int)):
-            raise TypeError("size must be an integer")
-        if (size < 0):
-            raise ValueError("size must be >= 0")
-        if ((position[0] < 0) or (position[1] < 0)):
-            raise TypeError("position must be a tuple of 2 positive integers")
 
     def area(self):
         """This funtion is used to find the area of square.
@@ -33,8 +27,10 @@ class Square:
     def size(self):
         """This function is used to return  the value that
            was changed by the size setter function.
+
         Args:
             value (int): the value to be changed
+
         Returns:
             the new size
         """
@@ -55,6 +51,7 @@ class Square:
 
         Args:
             value (int): the value of tuple to be changed.
+
         Returns:
             the new tuple
         """
@@ -66,12 +63,12 @@ class Square:
         if ((value[0] < 0) or (value[1] < 0) or not(isinstance(value, tuple))
            or len(value) != 2 or not(isinstance(value[0], int)) or
            not(isinstance(value[1], int))):
-
             raise TypeError("position must be a tuple of 2 positive integers")
 
     def my_print(self):
         """This function is used to print a square in form
         of # using the value given.
+
         """
         if (self.__size == 0):
             print()
