@@ -47,7 +47,7 @@ class Square:
         """This function is used to print a square in form
         of # using the value given.
         """
-        if (self.__size < 0):
+        if (self.__size == 0):
             print()
         else:
             for i in range(0, self.__size):
