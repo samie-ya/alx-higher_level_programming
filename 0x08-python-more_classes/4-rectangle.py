@@ -101,4 +101,4 @@ class Rectangle:
            representation of the rectangle
         """
         return f'Rectangle(' + str(self.__width) + ','\
-            + str(self.__height) + ')'
+               + ' ' + str(self.__height) + ')'
