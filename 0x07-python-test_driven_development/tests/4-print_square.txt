@@ -1,0 +1,50 @@
+The 4-print_square module
+=========================
+
+Using print_square
+------------------
+
+This text file is going to recieve an integer and make a square
+using '#' that is the same size as area of the integer given.
+
+       >>> print_square = __import__("4-print_square").print_square
+
+Now use it:
+
+Using integers
+       >>> print_square(2)
+       ##
+       ##
+
+       >>> print_square(0)
+       
+
+       >>> print_square(int("5"))
+       #####
+       #####
+       #####
+       #####
+       #####
+
+Using negative integer
+       >>> print_square(-4)
+       Traceback (most recent call last):
+       ValueError: size must be >= 0
+
+       >>> print_square(-1.0)
+       Traceback (most recent call last):
+       TypeError: size must be an integer
+
+Using non-int
+       >>> print_square("Hi")
+       Traceback (most recent call last):
+       TypeError: size must be an integer
+
+       >>> print_square(4.0)
+       Traceback (most recent call last):
+       TypeError: size must be an integer
+
+       >>> print_square((2,))
+       Traceback (most recent call last):
+       TypeError: size must be an integer
+

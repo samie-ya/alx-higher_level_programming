@@ -1,0 +1,51 @@
+The 0-add_interger Module
+==========================
+
+Using add_integer
+-----------------
+
+In this a text file two intergers will be given, then return the sum.
+
+    >>> add_integer = __import__("0-add_integer").add_integer
+
+Now use it:
+Adding intergers
+    >>> add_integer(3, 6)
+    9
+
+    >>> add_integer(6, int("2"))
+    8
+
+    >>> add_integer(-1, 5)
+    4
+
+    >>> add_integer(3)
+    101
+
+Adding floats
+    >>> add_integer(2.567, 89)
+    91
+
+    >>> add_integer(-2.3, 0)
+    -2
+
+Adding using non-int
+    >>> add_integer(None)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+    >>> add_integer("3", 7)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+    >>> add_integer((5, 4), 5)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+    >>> add_integer(0, [2, 3, 4, "Hello"])
+    Traceback (most recent call last):
+    TypeError: b must be an integer
+
+    >>> add_integer(0, 2 + 4j)
+    Traceback (most recent call last):
+    TypeError: b must be an integer
