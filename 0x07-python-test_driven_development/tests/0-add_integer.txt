@@ -58,10 +58,10 @@ Adding using non-int
     Traceback (most recent call last):
     OverflowError: cannot convert float infinity to integer
 
-    >>> add_integer(int(float('NAN')))
+    >>> add_integer(float('nan'), 89)
     Traceback (most recent call last):
     ValueError: cannot convert float NaN to integer
 
-    >>> add_integer(0, int(float('NAN')))
+    >>> add_integer(0, float('nan'))
     Traceback (most recent call last):
     ValueError: cannot convert float NaN to integer
