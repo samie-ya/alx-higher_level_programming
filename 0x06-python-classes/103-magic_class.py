@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """Defining MagicClass"""
 import math
+
+
 class MagicClass:
     """MagicClass is used to show circle circuma nd area"""
     def __init__(self, radius=0):
@@ -8,7 +10,7 @@ class MagicClass:
            Args:
                 radius (int): radius of a circle"""
         self.__radius = radius
-        if (type(radius) is not int) or (type(radius) is not float):
+        if (type(radius) is not int) and (type(radius) is not float):
             raise TypeError("radius must be a number")
 
     def area(self):
