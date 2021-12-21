@@ -9,6 +9,7 @@ class MyList(list):
            list (list): the built-in class
     """
     pass
+
     def print_sorted(self):
         """This function is used to print a list in ascending
            order"""
