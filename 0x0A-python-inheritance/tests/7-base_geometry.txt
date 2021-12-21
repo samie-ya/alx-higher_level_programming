@@ -49,3 +49,52 @@ Using non int
     ... except Exception as e:
     ...     print("[{}] {}".format(e.__class__.__name__, e))
     [TypeError] float must be an integer
+
+    >>> try:
+    ...     bg.integer_validator("int", {1, 2})
+    ... except Exception as e:
+    ...     print("[{}] {}".format(e.__class__.__name__, e))
+    [TypeError] int must be an integer
+
+    >>> try:
+    ...     bg.integer_validator("name", True)
+    ... except Exception as e:
+    ...     print("[{}] {}".format(e.__class__.__name__, e))
+    [TypeError] name must be an integer
+
+    >>> try:
+    ...     bg.integer_validator("float", None)
+    ... except Exception as e:
+    ...     print("[{}] {}".format(e.__class__.__name__, e))
+    [TypeError] float must be an integer
+
+    >>> try:
+    ...     bg.integer_validator("my_int", (1, 2))
+    ... except Exception as e:
+    ...     print("[{}] {}".format(e.__class__.__name__, e))
+    [TypeError] my_int must be an integer
+
+    >>> try:
+    ...     bg.integer_validator("float")
+    ... except Exception as e:
+    ...     print("[{}] {}".format(e.__class__.__name__, e))
+    [TypeError] integer_validator() missing 1 required positional argument: 'value'
+
+    >>> try:
+    ...     bg.integer_validator()
+    ... except Exception as e:
+    ...     print("[{}] {}".format(e.__class__.__name__, e))
+    [TypeError] integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+This section will check if area is implemented
+
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+    >>> bg = BaseGeometry()
+
+Now use it:
+
+    >>> try:
+    ...     print(bg.area())
+    ... except Exception as e:
+    ...      print("[{}] {}".format(e.__class__.__name__, e))
+    [Exception] area() is not implemented
