@@ -55,3 +55,14 @@ Using a new list
     >>> my_list.append(1)
     >>> my_list.print_sorted()
     [-93, -1, 1, 2, 3, 4, 4, 5, 20]
+
+    >>> my_list = MyList()
+    >>> my_list.append(-1)
+    >>> my_list.append(4)
+    >>> my_list.append(20)
+    >>> my_list.append(-93)
+    >>> my_list.append(5)
+    >>> new_list = my_list.print_sorted()
+    [-93, -1, 4, 5, 20]
+    >>> print(new_list)
+    None
