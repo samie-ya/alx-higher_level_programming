@@ -32,6 +32,8 @@ class Student:
             for i in attrs:
                 if i not in self.__dict__:
                     attrs.remove(i)
+                    if (attrs is None):
+                        return {}
                     return {i: self.__dict__[i] for i in attrs}
                 else:
                     return {i: self.__dict__[i] for i in attrs}
