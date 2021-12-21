@@ -1,0 +1,34 @@
+The 1-my_list Module
+====================
+
+Using my_list
+-------------
+
+In this text file contents of a list will be sorted.
+It will import a class and create an instance.
+
+    >>> MyList = __import__('1-my_list').MyList
+
+Now use it:
+
+Using integers
+    >>> my_list = MyList()
+    >>> my_list.append(-1)
+    >>> my_list.append(4)
+    >>> my_list.append(20)
+    >>> my_list.append(-93)
+    >>> my_list.append(5)
+    >>> print(my_list)
+    [-1, 4, 20, -93, 5]
+    >>> my_list.print_sorted()
+    [-93, -1, 4, 5, 20]
+
+    >>> my_list = MyList()
+    >>> my_list.append(4)
+    >>> my_list.append(3)
+    >>> my_list.append(2)
+    >>> my_list.append(1)
+    >>> print(my_list)
+    [4, 3, 2, 1]
+    >>> my_list.print_sorted()
+    [1, 2, 3, 4]
