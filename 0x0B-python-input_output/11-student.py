@@ -43,4 +43,5 @@ class Student:
                json (dict): the dictionary file that will contain
                            the replacement
         """
-        self.__dict__ = json
+        for i, j in json.items():
+            self.__dict__[i] = j
