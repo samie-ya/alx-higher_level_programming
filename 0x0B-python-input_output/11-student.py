@@ -44,6 +44,6 @@ class Student:
                            the replacement
         """
         if json is {}:
-            self.__dict__ = self.__dict__
+            self.__dict__ = {}
         else:
             self.__dict__ = json
