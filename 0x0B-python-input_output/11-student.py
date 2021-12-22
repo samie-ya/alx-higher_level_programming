@@ -45,3 +45,4 @@ class Student:
         """
         if json is not None:
             self.__dict__ = json
+        self.__dict__ = self.__dict__
