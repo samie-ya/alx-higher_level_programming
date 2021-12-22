@@ -43,7 +43,4 @@ class Student:
                json (dict): the dictionary file that will contain
                            the replacement
         """
-        if json is {}:
-            self.__dict__ = {}
-        else:
-            self.__dict__ = json
+        self.__dict__ = json
