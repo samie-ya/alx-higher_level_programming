@@ -29,11 +29,8 @@ class Student:
         if attrs is None:
             return self.__dict__
         else:
+            new_list = []
             for i in attrs:
-                if i not in self.__dict__:
-                    attrs.remove(i)
-                    if (attrs is None):
-                        return {}
-                    return {i: self.__dict__[i] for i in attrs}
-                else:
-                    return {i: self.__dict__[i] for i in attrs}
+                if i in self.__dict__:
+                    new_list.append(i)
+            return {x: self.__dict__[x] for x in new_list}
