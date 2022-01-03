@@ -87,3 +87,27 @@ class TestBase(unittest.TestCase):
         Square.save_to_file([s, s1])
         with open("Square.json", "r") as f:
             self.assertEqual(f.read(), '[{"id": 8, "size": 10, "x": 7, "y": 2}, {"id": 5, "size": 2, "x": 3, "y": 4}]')
+
+    def test_from_json_string_rec(self):
+        list_input = [{'id': 89, 'width': 10, 'height': 4}, {'id': 7, 'width': 1, 'height': 7}]
+        input_to_json = Rectangle.to_json_string(list_input)
+        out_put_to_json = Rectangle.from_json_string(input_to_json)
+        self.assertEqual(out_put_to_json, [{'height': 4, 'width': 10, 'id': 89}, {'height': 7, 'width': 1, 'id': 7}])
+
+    def test_from_json_string_sq(self):
+        list_input = [{'id': 89, 'size': 10}, {'id': 7, 'size': 1}]
+        input_to_json = Rectangle.to_json_string(list_input)
+        out_put_to_json = Rectangle.from_json_string(input_to_json)
+        self.assertEqual(out_put_to_json, [{'size': 10, 'id': 89}, {'size': 1, 'id': 7}])
+
+    def test_from_json_string(self):
+        list_input = []
+        input_to_json = Rectangle.to_json_string(list_input)
+        out_put_to_json = Rectangle.from_json_string(input_to_json)
+        self.assertEqual(out_put_to_json, [])
+
+    def test_from_json_string_None(self):
+        list_input = None
+        input_to_json = Rectangle.to_json_string(list_input)
+        out_put_to_json = Rectangle.from_json_string(input_to_json)
+        self.assertEqual(out_put_to_json, [])
