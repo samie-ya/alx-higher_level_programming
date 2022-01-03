@@ -2,6 +2,7 @@
 """Defining the class Base"""
 import json
 import os
+import csv
 
 
 class Base:
@@ -102,5 +103,47 @@ class Base:
                 for i in list_of_dict:
                     new_list.append(cls.create(**i))
             return new_list
+        else:
+            return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """This function saves list of objects to a csv file.
+
+        Args:
+            list_objs (list): list of instances
+        """
+        file_name = cls.__name__ + ".csv"
+        with open(file_name, "w") as f:
+            if cls.__name__ == "Rectangle":
+                field_names = ['id', 'width', 'height', 'x', 'y']
+            if cls.__name__ == "Square":
+                field_names = ['id', 'size', 'x', 'y']
+            csv_writer = csv.DictWriter(f, fieldnames=field_names)
+            csv_writer.writeheader()
+            if list_objs is None:
+                csv_writer.writerow()
+            else:
+                for i in list_objs:
+                    csv_writer.writerow(i.to_dictionary())
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """This function returns the list of instance depending on the class
+
+           Returns:
+               list of instance
+        """
+        file_name = cls.__name__ + ".csv"
+        if os.path.isfile(file_name):
+            with open(file_name, "r") as f:
+                new_list = []
+                csv_reader = csv.DictReader(f)
+                for row in csv_reader:
+                    new_list.append({k: int(v) for k, v in row.items()})
+                list_of_dict = []
+                for i in new_list:
+                    list_of_dict.append(cls.create(**i))
+            return list_of_dict
         else:
             return []
