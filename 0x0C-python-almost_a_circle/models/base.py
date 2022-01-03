@@ -51,6 +51,6 @@ class Base:
             file_name = type(i).__name__ + ".json"
         with open(file_name, "w", encoding='utf-8') as f:
             if list_objs is None:
-                f.write("[]")
+                f.write([])
             else:
-                f.write(cls.to_json_string(new_list))
+                f.write(Base.to_json_string(new_list))
