@@ -4,7 +4,7 @@ import json
 from pathlib import Path
 
 
-class Base:
+class Base(Object):
     """This is a class Base"""
     __nb_objects = 0
 
