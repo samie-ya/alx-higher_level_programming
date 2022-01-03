@@ -25,3 +25,29 @@ class TestBase(unittest.TestCase):
         b2 = Base(12)
         b3 = Base()
         self.assertEqual(b3.id, 3)
+
+    def test_to_json_string(self):
+        b = Rectangle(10, 7, 2, 8, 5)
+        dic = b.to_dictionary()
+        json_dict = Base.to_json_string([dic])
+        self.assertEqual(json_dict, '[{"id": 5, "width": 10, "height": 7, "x": 2, "y": 8}]')
+
+    def test_to_json_string_2(self):
+        json_dict = Base.to_json_string([])
+        self.assertEqual(json_dict, "[]")
+
+    def test_to_json_string_3(self):
+        json_dict = Base.to_json_string(None)
+        self.assertEqual(json_dict, "[]")
+
+    def test_to_json_string_4(self):
+        s = Square(10, 7, 2, 8)
+        dic = s.to_dictionary()
+        json_dict = Base.to_json_string([dic])
+        self.assertEqual(json_dict, '[{"id": 8, "size": 10, "x": 7, "y": 2}]')
+
+    def test_to_json_string_5(self):
+        b = Rectangle(10, 7, 2, 8, 5)
+        dic = b.to_dictionary()
+        json_dict = Base.to_json_string(dic)
+        self.assertEqual(json_dict, '{"id": 5, "width": 10, "height": 7, "x": 2, "y": 8}')
