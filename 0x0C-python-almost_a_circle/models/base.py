@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Defining the class Base"""
 import json
+from pathlib import Path
 
 
 class Base:
@@ -88,3 +89,19 @@ class Base:
             instance = cls(2)
         instance.update(**dictionary)
         return instance
+
+    @classmethod
+    def load_from_file(cls):
+        """This file returns list of instance depending on the class"""
+
+        file_name = cls.__name__ + ".json"
+        path = Path(file_name)
+        if path.is_file():
+            with open(file_name, "r", encoding='utf-8') as f:
+                list_of_dict = cls.from_json_string(f.read())
+                new_list = []
+                for i in list_of_dict:
+                    new_list.append(cls.create(**i))
+            return new_list
+        else:
+            return []
