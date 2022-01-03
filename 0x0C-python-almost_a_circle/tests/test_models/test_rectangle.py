@@ -16,14 +16,6 @@ class TestRectangle(unittest.TestCase):
     def test_class(self):
         self.assertIs(type(Rectangle), type(Base))
 
-    def test_public_id(self):
-        b = Rectangle(10, 2)
-        self.assertEqual(b.id, 1)
-
-    def test_public_id_2(self):
-        b = Rectangle(1, 2)
-        self.assertEqual(b.id, 2)
-
     def test_public_id_3(self):
         b = Rectangle(1, 3, 5, 8, 9)
         self.assertEqual(b.id, 9)

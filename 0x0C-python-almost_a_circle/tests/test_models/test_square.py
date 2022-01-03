@@ -20,14 +20,6 @@ class TestSquare(unittest.TestCase):
     def test_class2(self):
         self.assertIs(type(Square), type(Rectangle))
 
-    def test_public_id(self):
-        s = Square(10, 2)
-        self.assertEqual(s.id, 1)
-
-    def test_public_id_2(self):
-        s = Square(1, 2)
-        self.assertEqual(s.id, 2)
-
     def test_public_id_3(self):
         s = Square(1, 3, 5, 9)
         self.assertEqual(s.id, 9)
