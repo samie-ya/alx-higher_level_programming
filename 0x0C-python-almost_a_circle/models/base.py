@@ -54,3 +54,37 @@ class Base:
                 for i in list_objs:
                     new_list.append(i.to_dictionary())
                 f.write(Base.to_json_string(new_list))
+
+    @staticmethod
+    def from_json_string(json_string):
+        """This function returns the list of json representation
+           in json_string
+
+           Args:
+               json_string (str): string representation of list of
+               dictionaries
+
+           Returns:
+               list of json_string
+        """
+        if json_string is None or json_string == "":
+            return []
+        else:
+            return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """This function returns an instance with all attributes already set.
+
+           Args:
+               dictionary (dict): double pointer to dictionary
+
+           Returns:
+               returns an instance with all attributes already set
+        """
+        if cls.__name__ == "Rectangle":
+            instance = cls(2, 3)
+        if cls.__name__ == "Square":
+            instance = cls(2)
+        instance.update(**dictionary)
+        return instance
