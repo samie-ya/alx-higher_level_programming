@@ -45,12 +45,12 @@ class Base:
            Args:
                list_objs (list): the list of instances
         """
-        new_list = []
-        for i in list_objs:
-            new_list.append(i.to_dictionary())
         file_name = cls.__name__ + ".json"
         with open(file_name, "w", encoding='utf-8') as f:
             if list_objs is None:
                 f.write("[]")
             else:
+                new_list = []
+                for i in list_objs:
+                    new_list.append(i.to_dictionary())
                 f.write(Base.to_json_string(new_list))
