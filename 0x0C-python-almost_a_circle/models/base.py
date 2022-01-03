@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """Defining the class Base"""
 import json
-from pathlib import Path
+import os
 
 
 class Base:
@@ -95,8 +95,7 @@ class Base:
         """This file returns list of instance depending on the class"""
 
         file_name = cls.__name__ + ".json"
-        path = Path(file_name)
-        if path.is_file():
+        if os.path.isfile(file_name):
             with open(file_name, "r", encoding='utf-8') as f:
                 list_of_dict = cls.from_json_string(f.read())
                 new_list = []
