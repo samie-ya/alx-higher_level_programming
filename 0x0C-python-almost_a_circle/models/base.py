@@ -152,16 +152,15 @@ class Base:
     @staticmethod
     def draw(list_rectangles, list_squares):
         """This function is gonna use the turtle graphics to draw.
-
            Args:
                list_rectangles (list): list of rectangle
                list_square (list): list of squares
         """
         my_turtle = turtle.Turtle()
-        my_turtle.bgcolor("grey")
+        turtle.bgcolor("grey")
         my_turtle.shape("turtle")
-        my_turtle.pencolor("green")
-        my_turle.pensize(10)
+        my_turtle.pencolor("black")
+        my_turtle.pensize(3)
 
         for rec in list_rectangles:
             if rec.x > 0 and rec.y > 0:
