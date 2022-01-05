@@ -3,6 +3,7 @@
 import json
 import os
 import csv
+import turtle
 
 
 class Base:
@@ -147,3 +148,50 @@ class Base:
             return list_of_dict
         else:
             return []
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """This function is gonna use the turtle graphics to draw.
+
+           Args:
+               list_rectangles (list): list of rectangle
+               list_square (list): list of squares
+        """
+        my_turtle = turtle.Turtle()
+        my_turtle.bgcolor("grey")
+        my_turtle.shape("turtle")
+        my_turtle.pencolor("green")
+        my_turle.pensize(10)
+
+        for rec in list_rectangles:
+            if rec.x > 0 and rec.y > 0:
+                my_turtle.penup()
+                my_turtle.goto(rec.x, rec.y)
+                my_turtle.pendown()
+            else:
+                my_turtle.penup()
+                my_turtle.home()
+                my_turtle.pendown()
+            my_turtle.fillcolor("green")
+            my_turtle.begin_fill()
+            for i in range(2):
+                my_turtle.fd(rec.width)
+                my_turtle.rt(90)
+                my_turtle.fd(rec.height)
+                my_turtle.rt(90)
+            my_turtle.end_fill()
+        for s in list_squares:
+            if s.x > 0 and s.y > 0:
+                my_turtle.penup()
+                my_turtle.goto(s.x, s.y)
+                my_turtle.pendown()
+            else:
+                my_turtle.penup()
+                my_turtle.home()
+                my_turtle.pendown()
+            my_turtle.fillcolor("yellow")
+            my_turtle.begin_fill()
+            for i in range(4):
+                my_turtle.fd(s.size)
+                my_turtle.rt(90)
+            my_turtle.end_fill()
