@@ -157,10 +157,8 @@ class Base:
                list_square (list): list of squares
         """
         my_turtle = turtle.Turtle()
-        turtle.bgcolor("grey")
         my_turtle.shape("turtle")
-        my_turtle.pencolor("black")
-        my_turtle.pensize(3)
+        my_turtle.pensize(2)
 
         for rec in list_rectangles:
             if rec.x > 0 and rec.y > 0:
@@ -171,14 +169,12 @@ class Base:
                 my_turtle.penup()
                 my_turtle.home()
                 my_turtle.pendown()
-            my_turtle.fillcolor("green")
-            my_turtle.begin_fill()
+            my_turtle.pencolor("green")
             for i in range(2):
                 my_turtle.fd(rec.width)
                 my_turtle.rt(90)
                 my_turtle.fd(rec.height)
                 my_turtle.rt(90)
-            my_turtle.end_fill()
         for s in list_squares:
             if s.x > 0 and s.y > 0:
                 my_turtle.penup()
@@ -188,9 +184,8 @@ class Base:
                 my_turtle.penup()
                 my_turtle.home()
                 my_turtle.pendown()
-            my_turtle.fillcolor("yellow")
-            my_turtle.begin_fill()
+            my_turtle.pencolor("red")
             for i in range(4):
                 my_turtle.fd(s.size)
                 my_turtle.rt(90)
-            my_turtle.end_fill()
+                my_turtle.ht()
