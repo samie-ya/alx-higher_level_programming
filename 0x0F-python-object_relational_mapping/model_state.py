@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 """This file will create a class called State"""
-
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, String
 
