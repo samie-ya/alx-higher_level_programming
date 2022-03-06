@@ -9,6 +9,5 @@ Base = declarative_base()
 class State(Base):
     """This is the class State with class attribute id and name"""
     __tablename__ = 'states'
-    id = Column(Integer, primary_key=True, autoincrement=True,
-                unique=True, nullable=False)
-    name = Column(String(128), nullable=False)
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    name = Column(String(128))
