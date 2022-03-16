@@ -14,6 +14,7 @@ if __name__ == "__main__":
     session = Session()
     state = session.query(State).first()
     print("{}: {}" .format(state.id, state.name))
-    if (session.query(State).count() == 0):
+    total = session.query(State).count()
+    if (total == 0):
         print("Nothing")
     session.close()
