@@ -1,6 +1,3 @@
 #!/bin/bash
 #This script that takes in a URL, GET request to that URL, and displays
-if [ "$(curl -s -o /dev/null -w "%{http_code}" "$1")" -eq 200 ];
-then
-  curl "$1"
-fi
+curl "$1"
