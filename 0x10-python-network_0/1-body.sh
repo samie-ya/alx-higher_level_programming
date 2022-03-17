@@ -1,3 +1,3 @@
 #!/bin/bash
-#This script that takes in a URL, GET request to that URL, and displays
-curl -s -H "HTTP/1.1 200 OK" "$1"
+#This cript request to a URL passed as an argument, displays only the status
+if [ "$(curl -s -o /dev/null -w "%{http_code}" "$1")" -eq 200 ]; then curl -s "$1"; fi;
