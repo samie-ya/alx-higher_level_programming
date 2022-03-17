@@ -1,3 +1,3 @@
 #!/bin/bash
 #This script that takes in a URL, request to that URL
-curl -s 0.0.0.0:5000/catch_me
+curl -sX POST 0.0.0.0:5000/catch_me -H "Content-Type: text/html" -d 'You got me!'
