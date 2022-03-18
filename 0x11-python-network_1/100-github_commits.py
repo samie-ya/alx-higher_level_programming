@@ -4,9 +4,10 @@
 if __name__ == "__main__":
     import requests
     import sys
-    resp = requests.get('https://api.github.com/repos/' + sys.argv[1] +
-                        '/' + sys.argv[2] + '/commits')
-    json_resp = resp.json()
-    new_list = json_resp[:10]
-    for i in new_list:
-        print("{}: {}".format(i["sha"], i["commit"]["author"]["name"]))
+    with requests.Session() as session:
+        resp = session.get('https://api.github.com/repos/' + sys.argv[1] +
+                            '/' + sys.argv[2] + '/commits')
+        json_resp = resp.json()
+        new_list = json_resp[:10]
+        for i in new_list:
+            print("{}: {}".format(i["sha"], i["commit"]["author"]["name"]))
