@@ -9,9 +9,9 @@ if __name__ == "__main__":
         value = {'q', ""}
     value = {'q', sys.argv[1]}
     try:
-        resp = requests.post('http://0.0.0.0:5000/search_user', json=value)
+        resp = requests.post('http://0.0.0.0:5000/search_user', data=value)
         res = resp.json()
-    except exceptions.JSONDecodeError as e:
+    except Exception as e:
         print("Not a valid JSON")
     else:
         if (res == {}):
