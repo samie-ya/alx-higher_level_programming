@@ -2,13 +2,12 @@
 """This script handles errors"""
 
 if __name__ == "__main__":
-    from urllib.request import urlopen
-    from urllib.error import HTTPError
+    from urllib import request, error
     import sys
     try:
-        request = urlopen(sys.argv[1])
-        response = request.read()
-    except HTTPError as e:
+        req = request.urlopen(sys.argv[1])
+        response = req.read()
+    except error.HTTPError as e:
         print("Error: ", e.code)
     else:
         print(response.decode("utf-8"))
