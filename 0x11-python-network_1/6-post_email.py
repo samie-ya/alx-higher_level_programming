@@ -7,3 +7,4 @@ if __name__ == "__main__":
     url = sys.argv[1]
     value = sys.argv[2]
     r = requests.post(url, email=value)
+    print(r.text)
