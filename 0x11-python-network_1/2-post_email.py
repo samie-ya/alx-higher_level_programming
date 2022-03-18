@@ -5,9 +5,10 @@ if __name__ == "__main__":
     from urllib import request, parse
     import sys
     url = sys.argv[1]
-    value = sys.argv[2]
-    email = parse.urlencode(value.encode("utf-8"))
-    req = request.Request(url, data=email)
+    value = {'email': sys.argv[2]}
+    data = parse.urlencode(value)
+    data = data.encode("utf-8")
+    req = request.Request(url, data)
     with request.urlopen(req) as resp:
-        page = response.read()
-        print(page.decode("utf-8"))
+        new = resp.read()
+        print(new.decode("utf-8"))
