@@ -10,4 +10,4 @@ if __name__ == "__main__":
     req = request.Request(url, data=email)
     with request.urlopen(req) as resp:
         page = response.read()
-        print(page.decode("utf-8")
+        print(page.decode("utf-8"))
