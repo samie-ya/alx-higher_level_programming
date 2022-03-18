@@ -14,7 +14,7 @@ if __name__ == "__main__":
     except Exception as e:
         print("Not a valid JSON")
     else:
-        if (res == {}):
+        if (res == {} or sys.argv[1].isdigit()):
             print("No result")
         else:
             print("[{}] {}".format(res['id'], res['name']))
