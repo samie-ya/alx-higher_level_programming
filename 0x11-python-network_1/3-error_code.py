@@ -8,6 +8,6 @@ if __name__ == "__main__":
         req = request.urlopen(sys.argv[1])
         response = req.read()
     except error.HTTPError as e:
-        print("Error: ", e.code)
+        print("Error code: ", e.code)
     else:
         print(response.decode("utf-8"))
